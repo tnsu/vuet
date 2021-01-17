@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="changeMessage">Click</button><br>
+        {{ message.split('').reverse().join('') }} <br>
+        computed 사용 :  {{ reversedMessage }}
+        {{ reversedMessage }}
+
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                message : '반갑습니다'
+            },
+            methods: {
+                changeMessage(){
+                    this.message= '뿌엥';
+                }
+            },
+            computed:{
+                reversedMessage(){
+                    return this.message.split('').reverse().join('');
+                }
+            }
+        })
+    </script>
+</body>
+</html>
+
+<!-- 
+message.split('').reverse().join('')
+
+split : 배열로 하나하나 담고,
+reverse() : 순서를 바꿈
+join() : array를 합쳐 string 으로
+
+
+함수를 사용시 ()
+캐싱이 ㄴ
+
+computed 속성의 캐싱
+처음한번만 돌음
+
+computed 여러번 사용할 때 용이
+
+
+-->

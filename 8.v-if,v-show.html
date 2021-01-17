@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+   
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-if="show">Yes</div>
+        <div v-else>No</div>
+        <button @click="toggleShow">toggle</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+              show : true 
+            },
+            methods: {
+                toggleShow(){
+                    this.show = !this.show;
+                }
+             
+            }
+        })
+    </script>
+</body>
+</html>
+
+<!--
+v-if 는 false이면 랜더링을 안함 토글 비용이 높음 , 런타임시 조건이 바뀌지 않을 때 사용?
+
+v-show 초기 랜더링 비용이 높음, 자주 바구기를 원한다면 사용
+
+
+-->

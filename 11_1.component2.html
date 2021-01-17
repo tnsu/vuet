@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기지역</title>
+   
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+     
+        <tnti-button></tnti-button>
+    </div>
+    <hr><hr>
+    <div id="app-1">
+     
+       <tnti-button></tnti-button>
+    </div>
+    <script>
+       
+        const HelloWorld = {
+            template:'<div>hello world</div>'
+        }
+        const Tntibutton = {
+            components: {
+                'hello-world': HelloWorld
+            },
+           template:`
+           <div>
+                {{name}}<br>
+                <hello-world></hello-world>
+                <button @click="changeText">Click</button> 
+            <div>`,
+            data(){
+                return{
+
+              name : 'tnti'
+                }
+            },
+            methods: {
+               changeText(){
+                   this.name= '수빈';
+               }
+            }
+        };
+
+
+
+       const app= new Vue({
+            el: '#app',
+            components: {
+                'tnti-button':Tntibutton
+            }
+            // data:{
+            //   name : 'tnti'
+            // },
+            // methods: {
+            //    changeText(){
+            //        this.name= '수빈';
+            //    }
+            // }
+        })
+
+        const app1 =new Vue({
+            el: '#app-1',
+            components: {
+                'tnti-button':Tntibutton
+            }
+            // data:{
+            //   name : 'tnti'
+            // },
+            // methods: {
+            //    changeText(){
+            //        this.name= '수빈';
+            //    }
+            // }
+        })
+    </script>
+</body>
+</html>
+
+<!-- 
+컴포넌트 사용
+지역
+
+
+
+-->

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .font-bold{
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        클래스 바인딩 : 
+      <div :class="{ red:isRed,'font-bold': isbold }">Hello</div>
+      <button @click='update'>Click</button><br>
+        style 바인딩 : 
+      <div :style="{ color: red, fontSize:size}">Hello</div>
+        
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+               isRed: false,
+               isbold : false,
+               red: 'red',
+               size: '30px'
+            },
+            methods: {
+                update(){
+                    this.isRed= !this.isRed;
+                    this.isbold= !this.isbold;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
+
+<!-- 
+
+
+
+-->

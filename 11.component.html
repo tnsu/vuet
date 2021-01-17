@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기-전역</title>
+   
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- {{ name}} <br>
+        <button @click="changeText">Click</button>
+
+        <hr> -->
+        <tnti-button></tnti-button>
+    </div>
+    <hr><hr>
+    <div id="app-1">
+        <!-- {{name}}<br>
+        <button @click="changeText">Click</button>
+         <hr> -->
+       <tnti-button></tnti-button>
+    </div>
+    <script>
+        Vue.component('hello-world',{
+            template:'<div>hello world</div>'
+        })
+        Vue.component('tnti-button',{
+           template:`
+           <div>
+                {{name}}<br>
+                <hello-world></hello-world>
+                <button @click="changeText">Click</button> 
+            <div>`,
+            data(){
+                return{
+
+              name : 'tnti'
+                }
+            },
+            methods: {
+               changeText(){
+                   this.name= '수빈';
+               }
+            }
+        });
+       const app= new Vue({
+            el: '#app',
+            // data:{
+            //   name : 'tnti'
+            // },
+            // methods: {
+            //    changeText(){
+            //        this.name= '수빈';
+            //    }
+            // }
+        })
+
+        const app1 =new Vue({
+            el: '#app-1',
+            // data:{
+            //   name : 'tnti'
+            // },
+            // methods: {
+            //    changeText(){
+            //        this.name= '수빈';
+            //    }
+            // }
+        })
+    </script>
+</body>
+</html>
+
+<!-- 
+컴포넌트 사용
+전역
+모든 곳에서 사용할 수 있다.
+
+----------
+
+
+
+
+
+인스턴스를 생성할때마다 data odject를 사용함
+하지만 재사용을 하는 컴포넌트이기 때문에 odject를 넣으면 레퍼런스로 넘어가기 때문에(주소로 넘어가) 컴포넌트가 사용될때마다 data 가 변경되면은 그 주소에 있는 data 전부 update 됨 다른 컴포넌트의 정보도 변경될 수 있음 때문에 함수로 변경해 사용해야한다. 
+data:{ ...  }(no),   data(){ return{}name : 'tnti' }(yes?)
+
+
+template
+태그 안에 내용이 존재 해야 한다.
+태그안에 다른 콘텐츠가 존재해야한다.
+
+
+-->
