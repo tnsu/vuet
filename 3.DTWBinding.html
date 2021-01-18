@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <form v-on:submit.prevent='submit'>
+            <input type="text" :value="text" @keyup='updateText'><br>
+            {{ text }} <br>
+            <br>
+            
+            <!-- 양방향 바인딩 -->
+            <input type="text" v-model="text1"><br>
+            {{ text1 }} <br>
+            <button type="submit">submit</button>
+        </form>
+
+    </div>
+    <script> 
+        new Vue({
+            el:'#app',
+            data:{
+              text:'text',
+              text1:'text1'
+            },
+            methods:{
+              submit(){
+                  alert('전송');
+                  console.log('완료');
+                },
+                updateText(event){
+                  console.log(event);
+                  this.text = event.target.value;
+              }
+
+            }
+        })
+    </script>
+</body>
+</html>
+
+<!--
+Data Two Way Binding v-model
+
+v-on:keyup -> @keyup
+
+
+
+
+
+
+-->
+
+
+
+
+
+
+
+

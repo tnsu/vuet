@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>Parent</title>
+    
+    <script type="text/javascript">
+    
+        var openWin;
+    
+        function openChild()
+        {
+           0
+            openWin = window.open("pop.html",
+                    "childForm", "width=570, height=350, resizable = no, scrollbars = no");  
+     //openWin.document.getElementById("cInput").value = document.getElementById("pInput").value;
+        }
+       
+        function setChildText(){
+           // openWin.document.getElementById("cInput").value = 
+           openWin.document.getElementById("cInput").value=document.getElementById("pInput").value;
+        }
+       
+   </script>
+    
+</head>
+<body>
+ 
+    <br>
+    <b>></b>
+    <br><br>
+    <input type="button" value="팝업" onclick="openChild()"><br>
+    전달할 값 : <input type="text" id="pInput"> <input type="button" value="전달" onclick="setChildText()">
+</body>
+</html>
+sadasdasd
+

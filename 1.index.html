@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- {{ person.name }} {{person.age}} -->
+        {{ nextYear('안뇽')}}
+        <input v-bind:type="type" v-bind:value="inputData">
+        <a :href="getNaverLink('blog')">네이버</a>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                person:{
+                name:'수빈',
+                age:26
+                },
+                inputData:'입력행',
+                type:'number',
+                Link:'http://naver.com/'
+            },
+            methods:{
+                nextYear: function(greeting){
+                    return greeting + '! ' + this.person.name  + '이는 내년에 '+ (this.person.age + 1) + '살 이에오.';
+                },
+                otherMethod: function(){
+                    this.nextYear();
+                },
+                getNaverLink(channel){
+                    return this.Link + channel;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
+
+<!--
+인자(augment)가 함수를 사용할때 넣어주는 값  ex) nextYear('안뇽')  -안뇽
+매개변수(paramter)는 함수 안에서 설정된 변수  ex) function(greeting) - greeting
+function 을 줄여서 사용할 수 있다.   nextYear: function(greeting) -> nextYear(greeting)
+this 해당 data 안에서 실행되고 있기 때문에 data 와 method를 쓰지 않고 this 를 통해 쓸수 있다.
+
+Date Binding (v-bind)
+v-bind:type="type" -> :type="type"  생략 가능
+
+
+-->
+
+
+
+
+
+
+
+
