@@ -1,0 +1,12 @@
+
+
+
+
+npx @vue/cli create 프로젝트명
+
+처음 Manually select features 선택후 체크
+ (*) Router
+>(*) Vuex
+
+https://www.youtube.com/watch?v=5lDEee-Ur34&feature=emb_logo
+참고

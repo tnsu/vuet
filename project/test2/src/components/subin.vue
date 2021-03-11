@@ -1,9 +1,9 @@
 <template>
     <div>
         <p>header</p>
-       <!-- <slot></slot> -->
+       <slot name="haeder" :tntis="tntis"></slot>
         <p>body</p>
-       <!-- <slot></slot> -->
+       <slot name="body"></slot>
         <p>footer</p>
     </div>
 </template>
@@ -23,6 +23,7 @@ export default {
     data(){
         return{
             name : 'tntis',
+            tntis : "수빈"
         }
     },
 
